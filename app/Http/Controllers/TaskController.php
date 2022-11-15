@@ -38,7 +38,6 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
- 
       $rules = [
         'task_name' => 'required|max:100',
       ];
@@ -57,6 +56,7 @@ class TaskController extends Controller
      
       //データベースに保存
       $task->save();
+
      
       //リダイレクト
       return redirect('/tasks');
@@ -111,7 +111,6 @@ class TaskController extends Controller
         $task->save();
       } else {
         //「完了」ボタンを押したとき
-    
         //該当のタスクを検索
         $task = Task::find($id);
     
@@ -126,6 +125,7 @@ class TaskController extends Controller
       //リダイレクト
       return redirect('/tasks');
     }
+
      
 
     /**
