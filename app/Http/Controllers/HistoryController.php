@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Task;
 use Illuminate\Support\Facades\Validator;
 
-class TaskController extends Controller
+class HistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -66,23 +66,6 @@ class TaskController extends Controller
     public function show($id)
     {
         //
-    }
-
-    public function history($id)
-    {
-      $task = Task::find($id);
-      return view('tasks.edit', compact('task'));
-    }
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-      $task = Task::find($id);
-      return view('tasks.edit', compact('task'));
     }
 
     /**
