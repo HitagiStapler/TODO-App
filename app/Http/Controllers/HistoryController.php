@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use App\Models\History;
 use Illuminate\Support\Facades\Validator;
 
 class HistoryController extends Controller
@@ -15,9 +16,9 @@ class HistoryController extends Controller
      */
     public function index()
     {
-      $tasks = Task::where('status', false)->get();
+      $tasks = Task::where('status', true)->get();
      
-      return view('tasks.index', compact('tasks'));
+      return view('history.index', compact('tasks'));
     }
 
     /**
