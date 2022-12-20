@@ -7,11 +7,11 @@ use App\Http\Controllers\HistoryController;
  
 Route::resource('tasks', TaskController::class);
 
-Route::resource('tasks', HistoryController::class);
-Route::get('/list', [HistoryController::class, 'index']);
+Route::resource('history', HistoryController::class);
+Route::get('/history', [HistoryController::class, 'index']);
 
 Route::get('/list', [TodoListController::class, 'index']);
 
 Route::get('/', function () {
-    return view('index.history.php');
+    return view('history.history.php');
 });
